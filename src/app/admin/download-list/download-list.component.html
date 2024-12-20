@@ -1,0 +1,32 @@
+<div class="me-5">
+  <div class="row">
+    <div class="col-lg-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-10">
+      <h1>All Download List</h1>
+      <table class="table my-5 auto">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Recipe Id</th>
+            <th>Recipe Name</th>
+            <th>Recipe Cuisine</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (download of allDownloadList; track $index; let i = $index) {
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ download.recipeId }}</td>
+            <td>{{ download.recipeName }}</td>
+            <td>{{ download.recipeCuisine }}</td>
+            <td>{{ download.count }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

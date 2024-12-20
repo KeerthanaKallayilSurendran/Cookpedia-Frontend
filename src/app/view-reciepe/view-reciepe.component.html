@@ -1,0 +1,96 @@
+<app-header></app-header>
+<div class="container my-5">
+  <div class="row mb-5">
+    <div class="col-lg-6">
+      <a routerLink="/all-recipes">Back to Recipes List</a><br />
+      <img class="img-fluid my-5" [src]="recipe.image" alt="" />
+      <div class="d-flex justify-content-between">
+        <div (click)="downloadRecipe()" class="btn btn-success">
+          Download The Recipe
+        </div>
+        <div (click)="saveRecipe()" class="btn btn-success">Save The Recipe</div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h1>{{ recipe.name }}</h1>
+      <div class="d-flex justify-content-between my-5">
+        <p class="fw-bolder">Cuisine: {{ recipe.cuisine }}</p>
+        <p class="fw-bolder">Servings: {{ recipe.servings }}</p>
+        <p class="fw-bolder">Mode of Cooking: {{ recipe.difficulty }}</p>
+      </div>
+      <div class="d-flex justify-content-evenly my-5">
+        <div class="d-flex flex-column align-items-center">
+          <img
+            width="70px"
+            src="https://tse2.mm.bing.net/th?id=OIP.xy52jM0FuazKAQTfeyvo_gHaHa&pid=Api&P=0&h=180"
+            alt=""
+          />
+          <p class="fw-bolder">Preparation Time</p>
+          <h6>
+            <span class="fw-bolder text-success">{{
+              recipe.prepTimeMinutes
+            }}</span>
+            Minutes
+          </h6>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <img
+            width="100px"
+            src="https://eastmanscorner.com/wp-content/uploads/2015/01/cooking-icon.png"
+            alt=""
+          />
+          <p class="fw-bolder">Cooking Time</p>
+          <h6>
+            <span class="fw-bolder text-success">{{
+              recipe.cookTimeMinutes
+            }}</span>
+            Minutes
+          </h6>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <img
+            width="80px"
+            src="https://cdn1.iconfinder.com/data/icons/fitness-sport/512/calories-512.png"
+            alt=""
+          />
+          <p class="fw-bolder">Calories Per Serving</p>
+          <h6>
+            <span class="fw-bolder text-success">{{
+              recipe.caloriesPerServing
+            }}</span>
+          </h6>
+        </div>
+      </div>
+      <div class="my-3">
+        <h2>Ingredients Needed</h2>
+        <ol>
+          @for (item of recipe.ingredients; track $index) {
+          <li>{{ item }}</li>
+          }
+        </ol>
+      </div>
+      <div class="my-3">
+        <h2>Instructions</h2>
+        <ol>
+          @for (item of recipe.instructions; track $index) {
+          <li>{{ item }}</li>
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <h1>Related Recipes</h1>
+    <div class="row my-3">
+      @for (item of allRelatedRecipes; track $index) {
+      <div routerLink="/recipe/{{ item._id }}/view" class="col-lg-2">
+        <div class="p-3">
+          <img [src]="item.image" class="card-img-top" alt="" />
+          <h5 class="card-title">{{ item.name }}</h5>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,111 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row bg-success p-5">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 text-light">
+      <h1>The Easiest Way To Make Your Favorite Meal</h1>
+      <p style="text-align: justify" class="my-4 fs-5">
+        Discover 100+ recipes in your hand with the best recipe. Help you to
+        find the easiest way to cook.
+      </p>
+      <a
+        routerLink="/all-recipes"
+        style="background-color: green"
+        class="btn text-light"
+        >Explore Recipes</a
+      >
+    </div>
+    <div class="col-lg-6">
+      <img
+        src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png"
+        class="w-50 landingImg"
+        style="margin-left: 150px"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <div class="my-5 p-5">
+    <h1 class="fw-bolder">Popular Recipe of the Week</h1>
+    <div class="d-flex justify-content-between">
+      <p>Our popur recipes of the week</p>
+      <a routerLink="/all-recipes">View All</a>
+    </div>
+    <div class="row my-3">
+      @for(recipe of allRecipes; track $index){
+      <div class="col-lg-4">
+        <div class="p-3">
+          <img [src]="recipe.image" class="card-img-top" alt="" />
+          <h5 class="card-title">{{ recipe.name }}</h5>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div
+    style="
+      height: 400px;
+      background-image: url('https://images.unsplash.com/photo-1447078806655-40579c2520d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+    "
+    class="row align-items-center my-5"
+  >
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+      <div class="bg-light rounded p-5 w-75">
+        <h3>50+ Recipes That Very Quick And Fast</h3>
+        <p>
+          Find the perfect food ideas to start yur day with the quick and
+          easiest way
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="height: 400px"
+    class="bg-success my-5 row align-items-center text-white rounded p-5"
+  >
+    <div class="col-lg-6">
+      <img
+        src="https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png"
+        alt=""
+      />
+    </div>
+    <div class="col-lg-6">
+      <h1>Download App</h1>
+      <h6>
+        Download the App from App Store or <br />
+        Google Play for a better experience
+      </h6>
+      <img
+        style="width: 150px"
+        src="https://freepngimg.com/download/android/67006-app-play-google-android-store-free-clipart-hd.png"
+        alt=""
+      />
+      <img
+        width="150px"
+        src="https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <div>
+    <h1>Client Testimonials</h1>
+    <marquee behavior="" direction="">
+      <div class="d-flex my-5">
+        @for (item of allapprovedFeedback; track $index) {
+        <div class="rounded border w-100 p-3 me-2">
+          <h5>{{ item.name }}</h5>
+          <p style="white-space: normal; width: 100%; text-align: justify">
+            {{item.message}}
+          </p>
+        </div>
+        }
+      </div>
+    </marquee>
+  </div>
+</div>
+<app-footer></app-footer>

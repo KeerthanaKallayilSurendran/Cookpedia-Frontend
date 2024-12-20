@@ -1,0 +1,115 @@
+<app-header></app-header>
+<div class="container">
+  <div style="height: 300px" class="row bg-success">
+    <div
+      class="d-flex flex-column justify-content-center align-items-center text-white"
+    >
+      <h1 class="fw-bolder">Contact Us</h1>
+      <p class="text-center fs-5">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
+        Ex quae dolorem iste repellendus, porro corporis <br />
+        cum accusantium nobis explicabo nemo veritatis fugiat dolore. <br />
+        Illo repudiandae aperiam ullam, laboriosam commodi architecto?
+      </p>
+    </div>
+  </div>
+  <div class="row py-5">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 pt-5">
+      <h1>Get In Touch</h1>
+      <p style="text-align: justify">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius fuga
+        blanditiis possimus fugit voluptates provident distinctio architecto
+        vero illo incidunt minus odit ut dolore, impedit, non facilis
+        exercitationem. Illo, dolorem! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Rerum placeat quaerat quidem obcaecati enim
+        laboriosam, laudantium neque minus sit odit temporibus dicta, quae rem
+        in perferendis nemo esse fugit ipsam?
+      </p>
+      <div class="d-flex align-items-center">
+        <div class="btn rounded-circle text-white bg-success">
+          <i class="fa-solid fa-location-dot fs-4"></i>
+        </div>
+        <div class="ps-3">
+          <h4>Address</h4>
+          <p>Liberty Island New York, NY 10004 US</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="btn rounded-circle text-white bg-success">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="ps-3">
+          <h4>Phone Number</h4>
+          <p>+91 987456321</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="btn rounded-circle text-white bg-success">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="ps-3">
+          <h4>Email</h4>
+          <p>cookpedia&#64;gmail.com</p>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h2>Follow Us</h2>
+        <div>
+          <div class="btn rounded-circle text-white bg-success mx-2">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="btn rounded-circle text-white bg-success mx-2">
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+          <div class="btn rounded-circle text-white bg-success mx-2">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="btn rounded-circle text-white bg-success mx-2">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 p-5">
+      <div>
+        <h1>Testimonials</h1>
+        <form [formGroup]="testimonyForm" (ngSubmit)="addTestmony()">
+          <div class="mb-3">
+            <input
+              name="name"
+              formControlName="name"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Name"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              name="email"
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              name="message"
+              formControlName="message"
+              class="form-control"
+              placeholder="Message"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

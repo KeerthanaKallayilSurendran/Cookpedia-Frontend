@@ -1,0 +1,76 @@
+<div style="height: 100vh; width: 100%" class="container">
+  <div style="height: 100%" class="row">
+    <div
+      style="height: 100%"
+      class="col-lg-6 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div style="width: 450px" class="border rounded p-5">
+        <h1 class="pb-5">
+          <i class="fa-solid fa-graduation-cap"></i> Cookpedia
+        </h1>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="mb-3">
+            <input
+              name="username"
+              formControlName="username"
+              type="text"
+              class="form-control"
+              id="exampleInputEmail2"
+              placeholder="Username"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          @if (registerForm.get('username')?.errors &&
+          registerForm.get('username')?.touched) {
+          <div class="text-danger fw-bolder mb-3">Invalid Username</div>
+          }
+          <div class="mb-3">
+            <input
+              name="email"
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="E-mail"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          @if (registerForm.get('email')?.errors &&
+          registerForm.get('email')?.touched) {
+          <div class="text-danger fw-bolder mb-3">Invalid email</div>
+          }
+          <div class="mb-3">
+            <input
+              name="password"
+              formControlName="password"
+              type="password"
+              placeholder="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          @if (registerForm.get('password')?.errors &&
+          registerForm.get('password')?.touched) {
+          <div class="text-danger fw-bolder mb-3">Invalid password</div>
+          }
+          <button type="submit" class="btn btn-success form-control">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      style="height: 100%"
+      class="col-lg-6 d-flex flex-column justify-content-center align-items-start"
+    >
+      <h1 class="fw-bolder">Create a New Account</h1>
+      <p class="fs-4 fw-semibold">What you will get?</p>
+      <ul>
+        <li class="fw-medium">Diffrent Recipes</li>
+        <li class="fw-medium">Easy Way to Make Recipe</li>
+        <li class="fw-medium">Save YourFavourite Recipe</li>
+        <li class="fw-medium">Download Your Recipe</li>
+      </ul>
+    </div>
+  </div>
+</div>

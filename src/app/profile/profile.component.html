@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container my-5">
+  <div class="my-5">
+    <h1>My Profile</h1>
+    <label class="my-3">
+      <input (change)="getFile($event)" type="file" style="display: none" />
+      <img width="200px" height="200px" [src]="profileImg" alt="" />
+    </label>
+    <br />
+    <button (click)="updateProfile()" class="btn m-3 btn-success">Update Profile</button>
+  </div>
+  <h3>Download Recipes</h3>
+  <div class="row my-5">
+    @if (allRecipeDownload.length>0) { @for (recipe of allRecipeDownload; track
+    $index) {
+    <div class="col-lg-2">
+      <div class="p-3">
+        <img [src]="recipe.recipeImage" class="card-img-top" alt="" />
+        <h5 class="card-title">{{ recipe.recipeName }}</h5>
+      </div>
+    </div>
+    } }@else {
+    <div class="fw-bolder text-center text-danger">
+      No recipes download yet!!!
+    </div>
+    }
+  </div>
+</div>
+<app-footer></app-footer>
